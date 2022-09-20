@@ -38,6 +38,9 @@ class TerminalScribe:
         radians = (degrees/180) * math.pi 
         self.direction = [math.sin(radians), -math.cos(radians)]
 
+    def setPosition(self, pos):
+        self.pos = pos
+
     def up(self):
         self.direction = [0, -1]
         self.forward()
@@ -77,8 +80,11 @@ class TerminalScribe:
         time.sleep(self.framerate)
 
 canvas = Canvas(30, 30)
-scribe = TerminalScribe(canvas)
-scribe.setDegrees(135)
-for i in range(30):
-    scribe.forward()
+scribeList = [
+    {'position' : [1,3], 'direction' : 123, 'distance': 20},
+    {'position' : [1,6], 'direction' : 123, 'distance': 20},
+    {'position' : [1,8], 'direction' : 123, 'distance': 20},
+    {'position' : [1,9], 'direction' : 123, 'distance': 20},
+
+]
 
