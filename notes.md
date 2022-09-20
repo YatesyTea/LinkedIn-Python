@@ -41,4 +41,10 @@ Funtion:
 * Sets Direction
 * Travels baby!
 
+Steps required:
+* Functions to add to Terminal Scribe:
+    * Setting initial position of Scribe
+        * setPosition(self, pos) then sets self.
+* Creating Data Structure
+* Implementing a reader for data structure and executing requirements.
 
