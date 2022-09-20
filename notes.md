@@ -23,5 +23,22 @@ def cleanWord(word):
     ```
 This can be chained with other examples above, keep in mind that readability is king.
 
+## Dictionary Comprehensions
+Need to go over again!
+
+## Challenge Plan
+Data Structure for different scribes
+
+Data Structure:
+* Name
+* Starting Position (x,y) values
+* Direction of Travel
+* How Far It will Move
+
+Funtion:
+* Takes in data structure.
+* Puts it on board.
+* Sets Direction
+* Travels baby!
 
 
