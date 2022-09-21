@@ -34,6 +34,9 @@ Data Structure:
 * Starting Position (x,y) values
 * Direction of Travel
 * How Far It will Move
+* Name
+* Movement (will have to be able to draw square etc.)
+    * note: forgot this one first time round T_T
 
 Funtion:
 * Takes in data structure.
