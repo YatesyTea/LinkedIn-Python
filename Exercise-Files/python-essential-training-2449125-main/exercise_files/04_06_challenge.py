@@ -80,11 +80,15 @@ class TerminalScribe:
         time.sleep(self.framerate)
 
 canvas = Canvas(30, 30)
-scribeList = [
-    {'position' : [1,3], 'direction' : 123, 'distance': 20},
-    {'position' : [1,6], 'direction' : 123, 'distance': 20},
-    {'position' : [1,8], 'direction' : 123, 'distance': 20},
-    {'position' : [1,9], 'direction' : 123, 'distance': 20},
 
+scribeList = [
+    {'position' : [1,3], 'direction' : 123, 'name': 'hiya', 'movement':[['forward',20], ['drawSquare', 10]]},
+    {'position' : [1,6], 'direction' : 123, 'name': 'scribe2', 'movement':['left', 10]},
+    {'position' : [1,8], 'direction' : 123, 'name': 'jim', 'movement':['down', 3]},
+    {'position' : [1,9], 'direction' : 123, 'name': 'kendrick', 'movement':['drawSquare', 5]},
 ]
 
+# for scribe in scribeList:
+    # scribeList[scribe] = TerminalScribe(canvas)
+
+scribeList[0] = TerminalScribe(canvas)
