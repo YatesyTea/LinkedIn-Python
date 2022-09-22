@@ -1,4 +1,5 @@
 # LinkedIn-Learning
 ## Following LinkedIn Python Career path to patch any knowledge.
 
-The file structure will primarily be within the exercise files and follow each section as it's provided in a default format.
+Have set it so the only files on github are own created, or the solutions that they provide.
+
