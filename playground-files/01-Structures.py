@@ -45,6 +45,53 @@ print(setA)
 print('a' in setA)
 # Returns as a boolean value.
 print('z' in setA)
+print(len(setA))
+setA.pop() # For some reason you can pop, although it just removes a random one 😂.
+setA = {'a','b','c'}
+setA.discard('a') # Remove a specific value, if not present just does nothing.
+print(setA)
 
+
+# Tuples
+# Tuples are immutable unlike the other data structures, they are often returned by default for example when you write return a,b at the bottom of a function.
+myTuple = (5,6,7)
+print(myTuple)
+
+# Dictionaries
+people = {
+    'a' : 'Adam',
+    'b' : 'Beta',
+    'c' : 'Charlie',
+}
+print(people)
+print(people['a'])
+
+people['g'] = 'Goodwin'
+print(people['g'])
+
+# Lists within Dictionaries
+people = {
+    'a':['adam'],
+    'b':['Barry', 'Bob'],
+        }
+
+
+people['a'].append('Aaaaaahhh')
+print(people['a'])
+
+if 'x' not in people:
+    people['x'] = []
+people['x'].append('Xavier')
+print(people['x'])
+
+'''from collections import defaultlist
+
+people = defaultdict(list)
+people['x'].append('Xavier')
+print(people)
+'''
+
+# print(people['y']) this only works if the above default list is used, this can be used to avoid a lot of null errors initially
+# , however they may occur further down the line if error handling is not done correctly.
 
 
