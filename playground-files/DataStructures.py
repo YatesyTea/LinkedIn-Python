@@ -27,4 +27,24 @@ print(f"{a[0:3:1]} --> {a} with a.append(12)")
 a.insert(3, 'hiya just added') # So position to insert, then content that you're adding.
 print(a)
 
+# Sets
+setA = {'a','b','c'}
+print(setA)
+
+# List to Set to List
+a = ['a','a','b','c','c','c']
+print(a)
+a = list(set(a))
+print(a) # Do keep in mind that Sets do not preserve order, so these can end up in random order.
+# You can also not access set my position as sets are unordered, you instead access by element.
+
+setA.add('d') # Like insert/append but doesn't add anywhere specific.
+print(setA)
+
+# Checking whether something is present in set.
+print('a' in setA)
+# Returns as a boolean value.
+print('z' in setA)
+
+
 
