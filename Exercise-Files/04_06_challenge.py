@@ -88,7 +88,12 @@ scribeList = [
     {'position' : [1,9], 'direction' : 123, 'name': 'kendrick', 'movement':['drawSquare', 5]},
 ]
 
-# for scribe in scribeList:
-    # scribeList[scribe] = TerminalScribe(canvas)
-
+# Setting up the scribe
 scribeList[0] = TerminalScribe(canvas)
+scribeList[0].setDegrees(scribeList[0].direction)
+scribeList[0].setPos(scribeList['position'])
+
+print()
+# Execute the Movements of the Scribes
+for movement in scribeMoves:
+   print('hello') 
