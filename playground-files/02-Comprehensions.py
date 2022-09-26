@@ -47,3 +47,26 @@ for x in range(5):
 
 So we're starting from the leaf of the structure and walking down the branch to the trunk.
 '''
+
+classrooms = [
+    [
+        {'name' : 'kid1', 'age' : 12, 'role': 'student'},
+        {'name' : 'kid2', 'age' : 12, 'role': 'student'},
+        {'name' : 'teacher', 'age' : 40, 'role': 'teacher'}],
+    [
+        {'name' : 'kid3', 'age' : 12, 'role': 'student'},
+        {'name' : 'kid4', 'age' : 12, 'role': 'student'}
+    ]    
+]
+
+print([person['name'] for classroom in classrooms for person in classroom if person['role'] == 'student'])
+
+dateIdeas = [
+        {'name':'Pottery Spinning Class', 'type': 'Learning', 'times': ['morning', 'afternoon'], 'price':5},
+        {'name':'Swimming', 'type': 'active', 'times':['morning','afternoon'], 'price':1}
+        ]
+
+print(f"Date Idea Names: {[date['name'] for date in dateIdeas]}")
+
+print(f"Names: {[date['name'] for date in dateIdeas]} Price: {[date['price'] for date in dateIdeas]}")
+
