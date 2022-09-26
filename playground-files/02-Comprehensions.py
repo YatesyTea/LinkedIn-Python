@@ -35,3 +35,15 @@ cleaned = [cleanWord(word) for word in myString.split()]
 # Both of these above can be nested together into a one liner SO PYTHONIC!
 fullyDone = [[cleanWord(word) for word in sentence.split()] for sentence in myString.split('.')]
 print(fullyDone)
+
+# Nested Loops
+print([(x,y) for x in range(5) for y in range(5)])
+
+''' This is equivalent to:
+
+for x in range(5):
+    for y in range(5):
+        print(x,y)
+
+So we're starting from the leaf of the structure and walking down the branch to the trunk.
+'''
