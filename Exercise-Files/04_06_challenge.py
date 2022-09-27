@@ -93,7 +93,5 @@ scribeList[0] = TerminalScribe(canvas)
 scribeList[0].setDegrees(scribeList[0].direction)
 scribeList[0].setPos(scribeList['position'])
 
-print()
-# Execute the Movements of the Scribes
-for movement in scribeMoves:
-   print('hello') 
+# Making the scribe move
+scribeList[0]
