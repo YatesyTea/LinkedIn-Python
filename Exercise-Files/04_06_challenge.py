@@ -95,4 +95,10 @@ newScribe.setDegrees(scribeList[0]['direction'])
 newScribe.setPos(scribeList[0]['position'])
 
 # Making the scribe move
+for command in scribeList[0]['movement']:
+    if command[0] == 'forward':
+        for x in range (0, command[1]):
+            newScribe.forward()
+    elif command[0] == 'drawSquare':
+        newScribe.drawSquare(command[1])
 
