@@ -38,7 +38,7 @@ class TerminalScribe:
         radians = (degrees/180) * math.pi 
         self.direction = [math.sin(radians), -math.cos(radians)]
 
-    def setPosition(self, pos):
+    def setPos(self, pos):
         self.pos = pos
 
     def up(self):
@@ -89,9 +89,10 @@ scribeList = [
 ]
 
 # Setting up the scribe
-scribeList[0] = TerminalScribe(canvas)
-scribeList[0].setDegrees(scribeList[0].direction)
-scribeList[0].setPos(scribeList['position'])
+newScribe = TerminalScribe(canvas)
+print(scribeList[0]['direction'])
+newScribe.setDegrees(scribeList[0]['direction'])
+newScribe.setPos(scribeList[0]['position'])
 
 # Making the scribe move
-scribeList[0]
+
