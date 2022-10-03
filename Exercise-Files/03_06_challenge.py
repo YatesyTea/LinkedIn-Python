@@ -1,8 +1,7 @@
 import os
 import time
+import math
 from termcolor import colored
-import math 
-
 
 class Canvas:
     def __init__(self, width, height):
@@ -29,45 +28,58 @@ class TerminalScribe:
         self.canvas = canvas
         self.trail = '.'
         self.mark = '*'
-        self.framerate = 0.05
+        self.framerate = 0.02
         self.pos = [0, 0]
+        self.direction = [0,1] # Set default as pointing right
 
-        self.direction = [0, 1]
+    def setDirection(self, degrees):
+        radians = (degrees/180) * math.pi # Convert to Radians
+        self.direction = [math.sin(radians), -math.cos(radians)] # Convert into Horizontal and Vertical
 
-    def setDegrees(self, degrees):
-        radians = (degrees/180) * math.pi 
-        self.direction = [math.sin(radians), -math.cos(radians)]
-
-    def up(self):
-        self.direction = [0, -1]
-        self.forward()
-
-    def down(self):
-        self.direction = [0, 1]
-        self.forward()
-
-    def right(self):
-        self.direction = [1, 0]
-        self.forward()
-
-    def left(self):
-        self.direction = [-1, 0]
-        self.forward()
 
     def forward(self):
+        # Set position with by moving in x direction and y direction.
         pos = [self.pos[0] + self.direction[0], self.pos[1] + self.direction[1]]
+        if not self.canvas.hitsWall(pos): # Check of all others
+            self.draw(pos)
+
+    def up(self):
+        pos = [self.pos[0], self.pos[1]-1]
+        if not self.canvas.hitsWall(pos):
+            self.draw(pos)
+
+    def down(self):
+        pos = [self.pos[0], self.pos[1]+1]
+        if not self.canvas.hitsWall(pos):
+            self.draw(pos)
+
+    def right(self):
+        pos = [self.pos[0]+1, self.pos[1]]
+        if not self.canvas.hitsWall(pos):
+            self.draw(pos)
+
+    def left(self):
+        pos = [self.pos[0]-1, self.pos[1]]
         if not self.canvas.hitsWall(pos):
             self.draw(pos)
 
     def drawSquare(self, size):
-        for i in range(size):
+        i = 0
+        while i < size:
             self.right()
-        for i in range(size):
+            i = i + 1
+        i = 0
+        while i < size:
             self.down()
-        for i in range(size):
+            i = i + 1
+        i = 0
+        while i < size:
             self.left()
-        for i in range(size):
+            i = i + 1
+        i = 0
+        while i < size:
             self.up()
+            i = i + 1
 
     def draw(self, pos):
         self.canvas.setPos(self.pos, self.trail)
@@ -76,9 +88,10 @@ class TerminalScribe:
         self.canvas.print()
         time.sleep(self.framerate)
 
-canvas = Canvas(50, 50)
+canvas = Canvas(100, 100)
 scribe = TerminalScribe(canvas)
-scribe.setDegrees(160)
-for i in range(50):
+
+scribe.setDirection(160)
+for x in range (70):
     scribe.forward()
 
